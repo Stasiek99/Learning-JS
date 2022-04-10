@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let sklep = new Map();
+    sklep.set("woda", 2.50);
+    sklep.set("sok", 3.14);
+    sklep.set("browar", 3.70);
+    sklep.set("cukier", 5);
+
+
+    let koszyk = new Map(); //produkt - ilosc
+    let ilosc = 0;
+    while(true){
+
+        let menu = parseInt(prompt("1-dodaj produkt, 2-pokaz zawartosc koszyka, 3-kaza/koniec"));
+
+        if(menu == 1){
+        //prompt: produkt
+            let produkt=prompt("Podaj nazwe produktu, ktory chcesz kupic");
+        //sprawdzamy czy taki produkt jest w sklepie
+            //prompt: ilosc
+            if(sklep.has(produkt)){
+                let ilosc=parseInt(prompt("Podaj ilosc produktu: "));
+                if(koszyk.has(produkt)){
+                    let dotychczasowailosc = koszyk.get(produkt);
+                    let nowailosc = dotychczasowailosc+ilosc;
+                    koszyk.set(produkt, nowailosc);
+                }
+                else{
+                    koszyk.set(produkt, ilosc);
+                }
+            }
+            else{
+                console.log("Brak podanego produktu w sklepie");
+            }
+           
+        //koszyk: sok->5, wody->3
+        //opcja dokupienia: sok 2szt
+        //koszyk: sok->7, wody->3
+        }
+    
+        else if(menu == 2){
+        //prezentacja: Produkt: .... Ilosć: ....;
+            for(let x of koszyk.keys()){
+                console.log("Produkt " +x+ " Ilosc " + koszyk.get(x));
+            }
+
+        }
+        else if(menu == 3){
+        
+        //PARAGON
+        //Produkt: .... Cena: .... Ilość:.... Wartość: ....
+        //Produkt: .... Cena: .... Ilość:.... Wartość: ....
+        //Produkt: .... Cena: .... Ilość:.... Wartość: ....
+        //Produkt: .... Cena: .... Ilość:.... Wartość: ....
+        //Produkt: .... Cena: .... Ilość:.... Wartość: ....
+        //RAZEM DO ZAPŁATY: ...... PLN
+
+            let suma=0;
+            for( let x of koszyk.keys()){
+                console.log("Produkt: "+x+" Cena: "+sklep.get(x)+" Ilosc: "+koszyk.get(x)+" Wartosc "+(sklep.get(x)*koszyk.get(x)));
+                suma = suma+(sklep.get(x)*koszyk.get(x));
+            }
+            console.log(`RAZEM DO ZAPLATY: ${suma} PLN`);
+        
+            break;
+
+        }
+    }
+
+    </script>
+</body>
+</html>

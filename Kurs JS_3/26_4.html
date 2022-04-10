@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     let   tablicaKontaktow = [];
+
+    while(true){
+
+    let menu = prompt("D-dodaj, P-pokaz, U-usun, Z-zmiana, K-koniec").toUpperCase();
+
+    if(menu == "D"){
+        //prompty: imie, nazwisko, telefon
+        let imie=prompt("Podaj imie");
+        let nazwisko=prompt("Podaj nazwisko");
+        let telefon=prompt("Podaj telefon");
+        let kontakt = [imie, nazwisko, telefon];
+
+        tablicaKontaktow.push(kontakt);
+        console.log("Dane zostaly pomyslnie dodane");
+    }
+    else if(menu == "P"){
+        //prezentacja danych: Imie:.... Nazwisko:... Telefon:....
+        console.log(tablicaKontaktow);
+        for(let x of tablicaKontaktow){
+        console.log(`Imie: ${x[0]}, Nazwisko: ${x[1]}, Telefon: ${x[2]}`);
+        }
+    }
+    else if(menu == "U"){
+        //prompty: nazwisko
+        let pytanie=prompt("Podaj nazwisko do usuniecia");
+        let znaleziono=false;
+        for(let x in tablicaKontaktow){
+            if (tablicaKontaktow[x][1]==pytanie){
+                znalezono=true;
+                tablicaKontaktow.splice(x, 1);
+                console.log("Pomyslnie usunieto");
+                break;
+            }
+        }
+        if(znalezono===false){
+            console.log("Nie ma takiego nazwiska w bazie danych");
+        }   
+    }
+    else if(menu == "Z"){
+        //prompty: nazwisko, noweImie, noweNazwisko, nowyTelefon -> zmieniamy tylko to co nie jest puste czyli ""
+        let pytanie=prompt("Podaj nazwisko do zamiany");
+        let znaleziono = false;
+        for(let x in tablicaKontaktow){
+            if (tablicaKontaktow[x][1]==pytanie){
+                znaleziono=true;
+                tablicaKontaktow[x][0]=prompt("Podaj nowe imie");
+                tablicaKontaktow[x][1]=prompt("Podaj nowe nazwisko");
+                tablicaKontaktow[x][2]=prompt("Podaj nowy telefon");
+                console.log("Pomyslnie zmieniono");
+                break;
+            }
+            //for(let x of tablicaKontaktow){
+            //    ifx[1] == nazwisko{   
+            //    let noweImie=prompt("podaj nowe Imie")
+            //    let noweNazwisko=prompt("podaj nowe Imie")
+            //    let nowyTelefon=prompt("podaj nowe Imie)
+            //    if(noweImie 1= "")
+            //  x[0] = noweImie;
+            //
+            //    if(noweNazwisko 1= "")
+            //  x[1] = noweNazwizko;  
+            //
+            //    if(nowyTelefon 1= "")
+            //  x[2] = noweTelefon;
+            //
+            //  console.log("dane zostaly zmienione")''
+            //  break;
+            //
+            //
+            //
+
+        }
+        if(znaleziono===false){
+            console.log("Nie ma takiego nazwiska w bazie danych");
+        }
+    }
+    else if(menu == "K"){
+        break;
+    }
+    else{
+        console.log("Nierozpoznana opcja menu")
+    }
+
+}
+    </script>
+</body>
+</html>

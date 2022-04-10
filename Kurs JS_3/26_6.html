@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let zbior = new Set();
+        let ile=0;
+        do{
+            zbior.add(Math.floor((Math.random()*10)+1));
+            ile = ile+1;
+        }while (zbior.size!=6)
+        console.log(`Wylosowane liczby: ${zbior}`);
+        console.log(`Ilosc prob: ${ile}`);
+        console.log(zbior);
+        
+    </script>
+</body>
+</html>

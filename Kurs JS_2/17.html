@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let liczby=[];
+        let suma=0;
+        let ile=0
+        let srednia=0;
+        do{
+            liczba=parseInt(prompt("Podaj liczbe"));
+            liczby.push(liczba);
+            suma=suma+liczba;
+            ile=ile+1;
+            srednia=suma/ile;
+
+        }while (liczba!=0)
+        console.log(`Wszystkie liczby ${liczby}`);
+        console.log(`Suma liczb to ${suma}`);
+        console.log(`Srednia liczb to ${srednia}`);
+        
+    </script>
+</body>
+</html>

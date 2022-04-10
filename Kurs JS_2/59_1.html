@@ -1,0 +1,56 @@
+!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let liczba1=0;
+        let liczba2=0;
+        let znaki =["+", "*", "-"];
+        let znak;
+        let poprawne=0;
+        let bledne=0;
+        let dobry_wynik;
+        wynik=0;
+
+        for(let i=0; i<10; i++){
+            liczba1= Math.floor((Math.random() * 10) + 1);
+            liczba2= Math.floor((Math.random() * 10) + 1);
+            znak=znaki[Math.floor((Math.random() * 2))];
+            if (znak=="+"){
+                wynik=(parseInt(prompt(`Ile to ${liczba1} + ${liczba2}`)));
+                if (wynik==liczba1+liczba2){
+                    poprawne=poprawne+1;
+                }
+                else if(wynik!=liczba1+liczba2){
+                    bledne=bledne+1;
+                }   
+            }
+            else if(znak=="*"){
+                wynik=(parseInt(prompt(`Ile to ${liczba1} * ${liczba2}`)));
+                if (wynik==liczba1*liczba2){
+                    poprawne=poprawne+1;
+                }
+                else if(wynik!=liczba1*liczba2){
+                    bledne=bledne+1;
+                }   
+            }
+            else if(znak=="-"){
+                wynik=(parseInt(prompt(`Ile to ${liczba1} - ${liczba2}`)));
+                if (wynik==liczba1-liczba2){
+                    poprawne=poprawne+1;
+                }
+                else if(wynik!=liczba1-liczba2){
+                    bledne=bledne+1;
+                }   
+            }
+
+        }
+        console.log(`Poprawnych odpowiedzi: ${poprawne}, a blednych: ${bledne}`)
+    </script>
+</body>
+</html>

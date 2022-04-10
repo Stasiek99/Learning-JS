@@ -1,0 +1,32 @@
+<meta charset="utf-8" />
+<script>
+     
+    obliczenie = (a, b, c) => {
+        if (c=="+"){
+            console.log(a+b)
+        }
+        else if(c=="-"){
+            console.log(a-b)
+        }
+        else if(c=="*"){
+            console.log(a*b)
+        }
+        else if(c=="/"){
+            console.log(a/b)
+        }
+        else if(c=="%"){
+            console.log(a%b)
+        }
+        else {
+            console.log("zly znak")
+        }
+    }
+    
+    
+    var odp1 = parseInt(prompt("Podaj liczbe !"));
+    var odp2 = parseInt(prompt("Podaj liczbe !"));
+    var odp3 = prompt("Podaj znak !");
+    var odp = obliczenie(odp1, odp2, odp3)
+
+
+</script>

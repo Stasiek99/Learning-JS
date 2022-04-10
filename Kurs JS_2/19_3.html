@@ -1,0 +1,54 @@
+<meta charset="utf-8" />
+<script>
+   
+       
+    var suma= 0;
+    var ile= 0;
+    var srednia= 0;
+    var parzyste = 0;
+    var nieparzyste = 0;
+    var min;
+    var max;
+    
+    do{
+
+        liczba= parseInt(prompt("Podaj liczbe !"));
+        if(liczba != 0){
+            suma=liczba + suma;
+            ile= ile+1;
+            srednia=suma/ile;
+            if(liczba%2===0){
+                parzyste=parzyste+1
+            }
+            else if(liczba%1===0){
+                nieparzyste=nieparzyste+1
+            }
+
+            if(ile == 1){
+                min=liczba;
+                max=liczba;
+            }
+            else{
+                if(liczba<min){
+                    liczba=min
+                }
+                
+                if(liczba>max){
+                    liczba=max
+                }
+            }
+            
+        }
+
+    }while(liczba!=0);
+
+    console.log(`
+            Suma podanych liczb ${suma}
+            Ile podano liczb ${ile}
+            Srednia z podanych liczb ${srednia}
+            Parzyste ${parzyste}
+            Nieparzyste ${nieparzyste}
+            Max ${max}
+            Min ${min}`);
+            
+</script>

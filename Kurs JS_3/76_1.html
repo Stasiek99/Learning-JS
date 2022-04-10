@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Pracownik{
+            imie;
+            nazwisko;
+            kontrakt;
+            pensja;
+            constructor(imie, nazwisko, kontrakt, pensja){
+                this.imie = imie;
+                this.nazwisko = nazwisko;
+                this.kontrakt = kontrakt;
+                this.pensja = pensja;
+            }
+        }
+        class pracownikController{
+            constructor(){
+                this.listaPracownikow = [];
+            }
+
+            dodajPracownika(imie, nazwisko, kontrakt, pensja){
+                let pracownik = new Pracownik(imie, nazwisko, kontrakt, pensja);
+                this.listaPracownikow.push(pracownik);
+                console.log("Pracownik został dodany");
+            }
+
+            pokazPracownikow(){
+                for(let i of this.listaPracownikow){
+                console.log(`Imie: ${i.imie}, Nazwisko: ${i.nazwisko}, Kontrakt: ${i.kontrakt}, Pensja ${i.pensja}`)
+                }
+            }
+
+            usunPracownika(nazwisko){
+                let znaleziono=false; //WAŻNE !!!!!!!!
+                for(let i of this.listaPracownikow){
+                    if(nazwisko==i.nazwisko){
+                        znaleziono=true;
+                        this.listaPracownikow.splice(i,1);
+                        console.log("Zwolniłeś pracownika. Gratulacje!!!");
+                    }
+                    
+                }
+                if(znaleziono==false){ //WAŻNE !!!!!!!!
+                    console.log("Nie ma takiego pracownika");
+                }
+            }
+            zmienKontrakt(nazwisko, pensja){
+                let znaleziono = false; //WAŻNE !!!!!!!!
+                for(let i of this.listaPracownikow){
+                    if(nazwisko==i.nazwisko){
+                        znaleziono = true;
+                        i.kontrakt="E";
+                        i.pensja=pensja;
+                        console.log("Zmieniles pensje");
+                    }
+                }
+                
+                if(znaleziono == false){ //WAŻNE !!!!!!!!
+                    console.log("Nie ma takiego pracownika")
+                }
+                
+            }
+        }
+        class Firma extends pracownikController{
+            constructor(nazwaFirmy){
+                super();
+                this.nazwaFirmy = nazwaFirmy;
+                this.menu();
+            }
+
+            menu(){
+
+                while(true){
+                    let menu = prompt(`Witaj w firmie ${this.nazwaFirmy} \nD-dodaj, P-pokaz, U-usun, Z-zmien kontrakt, K-koniec`).toUpperCase();
+
+                    if(menu == "D"){
+                        //pytania:imie, nazwisko, staz S/E
+                        //jezeli jest E - > pytamy o pensje
+                        //jezeli jest S - > 1000 
+                        let imie = prompt("Podaj Imie: ");
+                        let nazwisko = prompt("Podaj nazwisko: ");
+                        let kontrakt = prompt("Podaj staz [s/e]: ").toUpperCase();
+                        
+                        switch(kontrakt){
+                            case "S":
+                                this.dodajPracownika(imie, nazwisko, kontrakt, 1000);
+                            break;
+                            case "E":
+                                let pensja = parseInt(prompt("Podaj wysokosc pensji: "));
+                                this.dodajPracownika(imie, nazwisko, kontrakt, pensja);
+                            break;
+                            defalt:
+                                console.log("Nierozpoznany kontrakt");
+                        }
+                    }
+                    else if(menu == "P"){
+                        //Imię:... Nazwisko:... Kontrakt:... Pensja: ...
+                        this.pokazPracownikow();
+                    }
+                    else if(menu == "U"){
+                        //pytania:nazwisko
+                        let nazwisko = prompt("Podaj nazwisko:");
+                        this.usunPracownika(nazwisko);
+                    }
+                    else if(menu == "Z"){
+                        //pytania:nazwisko, pensja
+                        //staz -> etat
+                        //etat -> etat
+                        let nazwisko = prompt("Podaj nazwisko:");
+                        let pensja = prompt("Podaj pensje:");
+                        this.zmienKontrakt(nazwisko, pensja);
+                    }
+                    else if(menu == "K"){
+                        break; 
+                    }
+                }
+            }
+        }
+        let firma = new Firma("Staszord Company");
+    </script>
+</body>
+</html>

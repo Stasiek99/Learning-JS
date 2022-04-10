@@ -1,0 +1,19 @@
+<meta charset="utf-8" />
+<script>
+    liczba1 = parseInt(prompt("Podaj liczbe  !"));
+
+    var min = liczba1;
+    var max = liczba1;
+    var liczba;
+    for(i=1; i<10; i++){
+        liczba = parseInt(prompt("Podaj liczbe  !"));
+        if(liczba<min){
+            min=liczba
+        }
+        else if(liczba>max){
+            max=liczba
+        }
+    }
+    console.log(`min to ${min}, a max to ${max}`)
+
+</script>

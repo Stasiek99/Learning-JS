@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Student {
+            constructor(imie, nazwisko){
+                this.imie = imie;
+                this.nazwisko = nazwisko;
+                this.oceny = [];
+            }
+        }
+        
+        let listaStudentow = [];
+
+        while(true){
+
+            let menu = prompt("1-dodaj studenta, 2-wypisz studentów, 3-usun studenta, 4-edytuj studenta, 5-dodaj ocenę studentowi, 6-wypisz oceny studenta, 7-koniec, 8-wypisz studentow wraz ze srednia ich ocen");
+
+            if(menu == "1"){
+                let imie = prompt("Podaj imie");
+                let nazwisko = prompt("Podaj nazwisko");
+
+                let student = new Student(imie, nazwisko);
+                listaStudentow.push(student);
+                console.log("Student zostal dodany");
+            }
+            else if(menu == "2"){
+                //prezentacja: Imię: .... Nazwisko: ....
+                for(i=0; i<listaStudentow.length; i++){
+                    console.log(`Imie: ${listaStudentow[i].imie}, Nazwisko: ${listaStudentow[i].nazwisko}`);
+                }
+            }
+            else if(menu == "3"){
+                //pytania:nazwisko
+                let pytanie = prompt("Podaj Nazwisko");
+                for(i=0; i<listaStudentow.length; i++){
+                    if(pytanie==listaStudentow[i].nazwisko){
+                        listaStudentow.splice(i,1);
+                        break;
+                    }
+                }
+            }
+            else if(menu == "4"){
+                //pytania:nazwisko, noweImie, noweNazwisko
+                let pytanie = prompt("Podaj Nazwisko");
+                for(i=0; i<listaStudentow.length; i++){
+                    if(pytanie==listaStudentow[i].nazwisko){
+                        let noweImie = prompt("Podaj Nowe Imie:");
+                        let noweNazwisko = prompt("Podaj Nowe Nazwisko:");
+                        listaStudentow[i].imie=noweImie;
+                        listaStudentow[i].nazwisko=noweNazwisko;
+                    }
+                }
+            }
+            else if(menu == "5"){
+                //pytania:nazwisko, ocena
+                let pytanie = prompt("Podaj Nazwisko osoby której mam dodać oceny");
+                for(i=0; i<listaStudentow.length; i++){
+                    if(pytanie==listaStudentow[i].nazwisko){
+                        nowaOcena = prompt("Podaj ocene");
+                        listaStudentow[i].oceny.push(nowaOcena);
+                    }
+                }
+            }
+            else if(menu == "6"){
+                //pytania:nazwisko
+                let pytanie = prompt("Podaj Nazwisko");
+                for(i=0; i<listaStudentow.length; i++){
+                    if(pytanie==listaStudentow[i].nazwisko){
+                        console.log(`Oceny: ${ listaStudentow[i].oceny}`);
+                    }
+                }
+            }
+            else if(menu == "7"){
+                console.log("Koniec programu");
+                break;
+            }
+            else if(menu == "8"){
+                
+                for(let i=0; i<listaStudentow.length; i++){
+                    let suma=0;
+                    let srednia=0;
+                    for(let l=0; l<listaStudentow[i].oceny.length; l++){
+                        suma=listaStudentow[i].oceny[l]+suma;
+                        
+                    }
+                    srednia=suma/listaStudentow[i].oceny.length;
+                    console.log(`Student: ${listaStudentow[i].imie} ${listaStudentow[i].nazwisko}, Oceny: ${listaStudentow[i].oceny}, Srednia ocen: ${srednia}`);
+                }
+            }
+            else{
+                console.log("Nierozpoznana opcja menu");
+            }
+        }
+    </script>
+
+</body>
+</html>

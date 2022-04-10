@@ -1,0 +1,44 @@
+<meta charset="utf-8" />
+<script>
+    var liczba1 = parseInt(prompt("Podaj liczbe 1 !"));
+    var znak = prompt("Podaj znak !");
+    var liczba2 = parseInt(prompt("Podaj liczbe 2 !"));
+    switch(znak){
+
+        case "+":
+        console.log(liczba1+liczba2);
+        break;
+        case "-":
+        console.log(liczba1-liczba2);
+        break;
+        case "/":
+            if(liczba2!=0){
+            console.log(liczba1/liczba2);
+            }
+            else if (liczba2==0){
+            console.log("Nie dziel przez 0")
+            }
+        break;
+        case "*":
+        console.log(liczba1*liczba2);
+        break;
+        default:
+            console.log("zly znak")
+    }
+
+
+   /* var liczba = 15;
+    switch(true){
+
+    case (liczba < 14.9):
+        console.log("niedowaga");
+    break;
+    case (liczba > 24.9):
+        console.log("nadwaga");
+    break;
+    case (liczba >= 14.9 && liczba <= 24.9):
+        console.log("ok");
+    break; */
+
+
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Produkt{
+            nazwa;
+            cena;
+            constructor(nazwa, cena){
+                this.nazwa = nazwa;
+                this.cena = cena;
+            }
+        }
+        class Oprogramowanie extends Produkt{
+            jezyk;
+            system;
+            constructor (nazwa, cena, jezyk, system){
+                super(nazwa, cena);
+                this.jezyk = jezyk;
+                this.system = system;
+            }
+        }
+        class Szkolenia extends Oprogramowanie{
+            termin;
+            constructor (nazwa, cena, jezyk, system, termin){
+                super(nazwa, cena, jezyk, system)
+                this.termin = termin;
+            }
+        }
+        let obj = new Szkolenia("Programowanie JS", 100, "polski", "Windows", 2022);
+        console.log(obj);
+
+    </script>  
+</body>
+</html>

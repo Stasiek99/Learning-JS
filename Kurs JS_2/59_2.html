@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let liczba1=0;
+        let liczba2=0;
+        let wynik=0;
+        for(let i=0; i<5; i++){
+            liczba1= Math.floor((Math.random() * 10) + 1);
+            liczba2= Math.floor((Math.random() * 10) + 1);
+            do{
+            wynik=(parseInt(prompt(`Ile to ${liczba1} * ${liczba2}`)));
+            }while(wynik!=liczba1*liczba2)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Formularz rezerwacji biletu lotniczego
+        </title>
+    </head>
+    <body>
+        <h1>Formularz rezerwacji biletu lotniczego</h1>
+        <form action="#" method="get">
+            <p>
+                <label for="imie" >Twoje imie</label><br/>
+                <input type="text" id="imie" name="imie" />
+            </p>
+            <p>
+                <label for="nazwisko">Twoje nazwisko</label><br/>
+                <input type="text" id="nazwisko" name="nazwisko" />
+            </p>
+            <p>
+                <label for="wylot">Data wylotu</label><br/>
+                <input type="date" id="wylot" name="wylot" />
+            </p>
+            <p>
+                <select name="Wylot z">
+                    <option value= "Warszawa">Warszawa</option>
+                    <option value= "Poznan">Poznan</option>
+                    <option value= "Krakow">Krakow</option>
+                </select>
+            </p>
+            <p>
+                <select name="Przylot do">
+                    <option value= "Ggansk">Gdansk</option>
+                    <option value= "Wroclaw">Wroclaw</option>
+                    <option value= "Katowice">Katowice</option>
+                </select>
+            </p>
+        </p>
+        <p>
+            Klasa VIP:<br/> 
+            <input type="radio" name="vip" value="tak" /> TAK
+            <input type="radio" name="vip" value="nie" /> NIE
+        </p>
+        <p>
+            Posilek:<br/>
+                <input type="checkbox" name="przystawka" value="przystawka" />przystawka <br/>
+                <input type="checkbox" name="obiad" value="obiad" />obiad
+                <input type="checkbox" name="deser" value="deser" />deser
+            </select>
+        </p>
+        <p>
+            Dodatkowe uwagi:<br/>
+            <textarea placeholder="uwagi" name="Uwagi"></textarea>
+        </p>
+        <p>
+            <button type="submit">Zarezerwuj</button>
+            <hr/>
+            <button stype="reset">Anuluj</button>
+
+
+        </p>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tab = [];
+        let min = 101;
+        let max = 0;
+        
+        for(let i=0; i<10; i++){
+            tab.push(Math.floor((Math.random() * 100) + 1));
+            console.log(tab[i]);
+        }
+      
+        for(let i=0; i<10; i++){
+            if(max<tab[i]){
+                max=tab[i];
+            }
+            else if(min>tab[i]){
+                min=tab[i];
+            }
+        }
+        console.log(`Min to ${min}, a max to ${max}`);
+    </script>
+</body>
+</html>

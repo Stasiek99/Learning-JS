@@ -1,0 +1,47 @@
+<meta charset="utf-8" />
+<script>
+     
+    var los = Math.floor((Math.random() * 100) + 1);
+    var liczba;
+    var ile=0;
+    console.log;
+
+    do {
+        liczba = parseInt(prompt("Podaj liczbe !"));
+        ile =ile+1
+        
+        if(liczba>los){
+            console.log("To za duzo")
+        }
+        else if(liczba<los){
+            console.log("To za malo")
+        }
+        else if(liczba == los){
+            console.log("Wygraleś")
+            var dec = prompt("Czy chcesz zagrac jeszcze raz ? T/N");
+            if(dec == "T"){
+                ile=0;
+                continue;
+            }
+            else{
+                break;
+            }
+        }
+
+        if(ile==5 && liczba != los){
+            console.log("Przegrales")
+            var dec = prompt("Czy chcesz zagrac jeszcze raz ? T/N");
+            if(dec == "T"){
+                ile=0;
+                continue;
+            }
+            else{
+                break;
+            }
+        }
+    }while (liczba!=los)
+    
+  
+
+
+</script>

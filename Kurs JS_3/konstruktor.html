@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Samolot{
+
+        constructor(_nazwa, _kolor, _iloscPas, _rozpSkrzydel){
+            this.nazwa = _nazwa;
+            this.kolor = _kolor;
+            this.iloscPas = _iloscPas;
+            this.rozpSkrzydel = _rozpSkrzydel;
+        }
+
+        }
+
+        class Lodz{
+
+        constructor(n, k, w, ko){
+        this.nazwa = n;
+        this.kolor = k;
+        this.wypornosc = w;
+        this.kotwica = ko;
+        }
+
+        }
+
+        let ob1 = new Samolot("F15", "niebieski", 2, 100);
+        let ob2 = new Samolot("B757", "kolory", 200, 1000);
+        let ob3 = new Samolot("Airbus", "biały", 2000, 10000);
+        let ob4 = new Lodz("łajba", "szary", 9999, 12345);
+
+        console.log(ob1);
+        console.log(ob2);
+        console.log(ob3);
+        console.log(ob4);
+    </script>
+
+</body>
+</html>
