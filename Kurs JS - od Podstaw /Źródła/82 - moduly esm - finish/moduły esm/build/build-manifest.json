@@ -1,0 +1,33 @@
+{
+  "inputs": {
+    "js/utils/helpers.js": {
+      "bytes": 537,
+      "imports": []
+    },
+    "js/main.js": {
+      "bytes": 252,
+      "imports": [
+        {
+          "path": "js/utils/helpers.js",
+          "kind": "import-statement"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "../~~bundle~~/js/main.js": {
+      "imports": [],
+      "exports": [],
+      "entryPoint": "js/main.js",
+      "inputs": {
+        "js/utils/helpers.js": {
+          "bytesInOutput": 272
+        },
+        "js/main.js": {
+          "bytesInOutput": 106
+        }
+      },
+      "bytes": 379
+    }
+  }
+}

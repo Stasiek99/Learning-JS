@@ -1,0 +1,17 @@
+{
+  "name": "bundlery-kodu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Piotr Palarz",
+  "license": "ISC",
+  "dependencies": {
+    "luxon": "^1.26.0"
+  },
+  "devDependencies": {
+    "snowpack": "^3.0.13"
+  }
+}

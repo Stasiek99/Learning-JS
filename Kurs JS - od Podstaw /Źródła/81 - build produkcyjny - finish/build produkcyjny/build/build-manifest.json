@@ -1,0 +1,33 @@
+{
+  "inputs": {
+    "_snowpack/pkg/luxon.js": {
+      "bytes": 216524,
+      "imports": []
+    },
+    "js/main.js": {
+      "bytes": 121,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/luxon.js",
+          "kind": "import-statement"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "../~~bundle~~/js/main.js": {
+      "imports": [],
+      "exports": [],
+      "entryPoint": "js/main.js",
+      "inputs": {
+        "_snowpack/pkg/luxon.js": {
+          "bytesInOutput": 61752
+        },
+        "js/main.js": {
+          "bytesInOutput": 52
+        }
+      },
+      "bytes": 61805
+    }
+  }
+}
